@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>search</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <a href="/greeting"> Начальная страница </a>
+    <br> <a href="/search"> Поиск человека по фамилии и имени </a>
+    <h1>Введите данные, по которым будет производится поиск</h1>
+    <form action="#" th:action="@{/search}" th:object="${greeting}" method="post">
+        <p>Фамилия: <input type="text" th:field="*{lastName}" pattern="[A-Za-zА-Яа-яЁё]{1,15}" required title="Кириллица/латинские буквы"/></p>
+        <p>Имя: <input type="text" th:field="*{firstName}" pattern="[A-Za-zА-Яа-яЁё]{1,15}" required title="Кириллица/латинские буквы"/></p>
+        <p><input type="submit" value="Поиск человека"></p>
+    </form>
+</body>
+</html>

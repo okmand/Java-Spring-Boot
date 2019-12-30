@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>find</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <a href="/greeting"> Начальная страница </a>
+    <br> <a href="/search"> Поиск человека по фамилии и имени </a>
+    <h1>Пользователь найден</h1>
+    <form action="#" th:object="${greeting}" >
+        <p>Фамилия: <input type="text" th:field="*{lastName}" readonly /></p>
+        <p>Имя: <input type="text" th:field="*{firstName}" readonly /></p>
+        <p>Отчество: <input type="text" th:field="*{patronymic}" readonly /></p>
+        <p>Возраст: <input type="text" th:field="*{age}" readonly /></p>
+        <p>Зарплата: <input type="text" th:field="*{salary}" readonly /></p>
+        <p>Электронная почта: <input type="email" th:field="*{email}" readonly /></p>
+        <p>Место работы: <input type="text" th:field="*{job}" readonly /></p>
+        <p>Текущее время: &nbsp; &nbsp; &nbsp; &nbsp;
+            <script> document.write(Date()); </script> </p>
+        <p>Имя браузера: &nbsp; &nbsp; &nbsp; &nbsp;
+            <script> document.write(navigator.userAgent); </script> </p>
+    </form>
+</body>
+</html>
